@@ -37,13 +37,23 @@ dl, ol, ul {
     margin-left: 100px;
     background-color: aliceblue;
     height: 10vh;
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+.logo-container{
+    flex:3;
+
+}
+
+.nav-container{
+    flex: 7;
 }
 .bottom-container nav ul{
     display: flex;
     align-items: center;  
+    justify-content: end;
 }
 
 .bottom-container-in nav ul li {
@@ -61,5 +71,6 @@ dl, ol, ul {
 }
 
 .bottom-container{
+    position: fixed;
     background-color: aliceblue;
 }

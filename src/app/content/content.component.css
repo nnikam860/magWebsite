@@ -1,0 +1,28 @@
+.sliderBox{
+    display: flex;
+    height: 60vh;
+    width: 99vw;
+    background-color: rgb(157, 157, 201);
+}
+
+.text-div{
+flex: 1;
+    background-color: rgb(35, 69, 99);
+}
+
+.inner-text-div{
+    margin: 50px;
+}
+
+.slider-div{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(162, 105, 29);
+}
+
+.carousel{
+    width: 30vw;
+    height: 30vh;
+}
