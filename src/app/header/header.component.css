@@ -16,11 +16,15 @@
 .navbar-top a{
     color:white;
 }
-.navbar-brand{
-    margin-right: 26pt;
-}
-
 .navbar-bottom{
     color: white;
     background-color: black;
 }
+.navbar-brand {
+    margin-right: 0%; /* Add some spacing between the logo and other navbar content */
+  }
+  
+  .logo {
+    width: 18.75rem; /* Set a specific width for the logo */
+    height: auto; /* Allow the height to adjust proportionally */
+  }
