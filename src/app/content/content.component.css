@@ -9,22 +9,70 @@ body{
     margin: 0;
     padding: 0;
 }
-
+.small-image {
+    max-width: 100%; /* Adjust the maximum width as needed */
+  }
 
 
 .left-content{
     flex: 1;
-    background-color: aqua;
+    background-color: rgb(250, 237, 234);
 }
-.right-slider{
+.right-slider1{
     justify-content: center;
     align-items: center;
     display: flex;
     flex: 1;
-    background-color: aquamarine;
+    background-color: rgb(245, 210, 209);
+}
+.right-slider2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    background-color: rgb(246, 195, 193);
+}
+.right-slider3{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    background-color: rgb(247, 166, 163);
 }
 
- img{
+ .img1{
     width: 90vw;
     height: 50vh;
 }
+.image-wrapper {
+    background-color: #000; /* Black background color */
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.imz{
+    width: auto;
+    height: 50%;
+}
+.container {
+    flex-grow: 1;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.background-wrapper {
+    /* background-image: url('assets/background.avif'); */
+    background-size: cover; /* Adjust background size as needed */
+    background-position: center; /* Adjust background position as needed */
+    width: 100%; /* Ensure full width */
+    height: 300rem; /* Set the desired height */
+  }
+  

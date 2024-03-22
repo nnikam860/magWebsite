@@ -14,6 +14,7 @@ import { AddArticleComponent } from './add-article/add-article.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     ArticlesComponent,
     AddArticleComponent,
     ContactUsComponent,
+    FooterComponent,
     
   ],
   imports: [

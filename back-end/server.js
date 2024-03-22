@@ -1,11 +1,15 @@
-const express = require("express");
+// server.js
+const express = require('express');
 const app = express();
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
+
+// In-memory storage for image URLs
+let imageUrls = [];
 
 // Set up storage for file uploads
 const storage = multer.diskStorage({
@@ -20,35 +24,24 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Handle POST request to /api/articles
-app.post('/api/articles', upload.single('file'), (req, res) => {
-  const { title, author, content } = req.body;
-  const file = req.file;
+// Upload endpoint
+app.post('/uploads', upload.single('image'), async (req, res) => {
+  const imageUrl = 'http://localhost:3000/' + req.file.path;
 
-  // Process form data and file upload here
-  console.log('Received form data:', { title, author, content });
-  console.log('Received file:', file);
+  // Store the image URL in memory
+  imageUrls.push(imageUrl);
 
-  // Send a response
-  res.status(200).json({ message: 'Article created successfully' });
+  res.json({ imageUrl: imageUrl });
 });
 
+// Endpoint to fetch image URLs
+app.get('/images', (req, res) => {
+  res.json({ imageUrls: imageUrls });
+});
 
 // Serve uploaded files statically
 app.use("/uploads", express.static('uploads'));
 
-app.get("uploads/", (req, res)=>{
-  res.send({imageURL: imageId })
- res.json( {imageId})
-} )
-
-// Define a simple route
-app.get("/api/message", (req, res) => {
-  res.send({ message: "Hello from the server!" });
-});
-
-
-// Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

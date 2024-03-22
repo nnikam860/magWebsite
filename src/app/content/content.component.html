@@ -1,27 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   <div class="content-and-slider">
-    <div class="left-content">
-        <h1 style="text-align: center; text-decoration: underline;">Latest Articles</h1>
+
+<div class="container-fluid p-0 mb-5">
+  <div class="position-relative">
+    <!-- <div class="container-fluid p-0 position-relative"> -->
+    <!-- Big background image -->
+    <img src="assets/background.avif" class="img-fluid imz" alt="Big Image"style="width: 100%; height:10%;"/>
+    
+    <!-- Image overlay -->
+    <div class="position-absolute top-0" style="margin-top: 5%; margin-left:55%; margin-right: 5%;" >
+      <!-- Small image on top -->
+      <img src="assets/Mirrorworld.webp" class="img-fluid small-image" alt="Small Image">
     </div>
-    <div class="right-slider">
-       
-        <div id="carouselExampleAutoplaying" class="carousel slide mx-4" data-bs-ride="carousel">
+    <div class="overlay"></div>
+  </div></div>
+
+  <div class="container mb-5 mt-5">
+    <div class="row mb-10">
+      <div class="left-content">
+        <h1 style="text-align: center; ">Latest Articles</h1>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cumque sit quibusdam dolor inventore voluptatem deserunt esse laborum perspiciatis! Porro quidem ducimus laboriosam quasi veniam nemo perferendis laudantium ipsam soluta!</h4>
+      </div>
+      <div class="col-md-7 mb-10">
+        <div class="right-slider1">
+          <div id="carouselExampleAutoplaying" class="carousel slide mx-4" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="assets/pexels-erik-mclean-7524997.jpg" class="d-block w-100" alt="...">
+                <img src="assets/pexels-erik-mclean-7524997.jpg" class="d-block w-100 img1" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="assets/pexels-erik-mclean-7524998.jpg"  class="d-block w-100" alt="...">
+                <img src="assets/pexels-erik-mclean-7524998.jpg"  class="d-block w-100 img1" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="assets/pexels-natasha-kendall-4093392.jpg"  class="d-block w-100" alt="...">
+                <img src="assets/pexels-natasha-kendall-4093392.jpg"  class="d-block w-100 img1" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -32,9 +41,97 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-          
-       </div>
+          </div>
+        </div>
+      </div>
     </div>
-   </div>
-</body>
-</html>
+  </div>
+  
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-md-3 mt-4 mb-5">
+        <div class="widget-content px-0">
+          <div class="chart d-flex justify-content-center">
+            <div class="image-wrapper" style="background-color: #000;">
+              <img src="assets/pexels-erik-mclean-7524997.jpg" class="img-fluid h-100" alt="Image 1">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-4 mb-4">
+        <div class="widget-content px-0">
+          <div class="chart d-flex justify-content-center">
+            <div class="image-wrapper" style="background-color: #000;">
+              <img src="assets/pexels-erik-mclean-7524997.jpg" class="img-fluid h-100" alt="Image 2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-4 mb-4">
+        <div class="widget-content px-0">
+          <div class="chart d-flex justify-content-center">
+            <div class="image-wrapper" style="background-color: #000;">
+              <img src="assets/pexels-erik-mclean-7524997.jpg" class="img-fluid h-100" alt="Image 3">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-4 mb-4">
+        <div class="widget-content px-0">
+          <div class="chart d-flex justify-content-center">
+            <div class="image-wrapper" style="background-color: #000;">
+              <img src="assets/pexels-erik-mclean-7524997.jpg" class="img-fluid h-100" alt="Image 4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="content-and-slider">
+  <div class="left-content">
+      <h1 style="text-align: center; text-decoration: underline;">Latest Articles</h1>
+  </div>
+  <div class="right-slider">
+     
+      <div id="carouselExampleAutoplaying" class="carousel slide mx-4" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/pexels-erik-mclean-7524997.jpg" class="d-block w-100 img1" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/pexels-erik-mclean-7524998.jpg"  class="d-block w-100 img1" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/pexels-natasha-kendall-4093392.jpg"  class="d-block w-100 img1" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+       
+     </div>
+     
+  </div>
+
+ </div>  -->
+ <!-- <br><br><br><br><br><br><br><br><br> -->
+ 
+
+ <div><div>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem fugit inventore aut possimus, reiciendis mollitia modi! Ratione distinctio placeat deleniti fuga vel illo laboriosam ex quidem, fugiat, facilis magni?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga rem necessitatibus nisi perferendis deserunt sequi culpa eveniet, debitis eius quisquam maiores illo tempore nemo. Animi quia dicta tenetur nulla optio?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id voluptas sed recusandae voluptatum corrupti aliquam delectus! Eius tempora quidem itaque velit quasi repudiandae necessitatibus, facilis vero, ex quis officiis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi asperiores necessitatibus. Repellendus laboriosam accusamus quos eos suscipit voluptates. Nobis nulla, ipsa natus ut rem maxime beatae modi quidem molestiae.lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nulla fugiat soluta doloribus quibusdam, ducimus quas itaque unde minus ut nesciunt corrupti laboriosam amet et quasi cum laudantium sunt optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus soluta inventore magnam enim earum porro repellat labore harum consectetur quis maiores exercitationem velit in, nam veritatis, quod aliquam ea mollitia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit itaque beatae eveniet laborum cupiditate tenetur est, dolores accusamus, commodi deserunt eaque aliquam, pariatur dolor. Aliquid temporibus vel assumenda nobis. Labore?
+</div>
+<div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem fugit inventore aut possimus, reiciendis mollitia modi! Ratione distinctio placeat deleniti fuga vel illo laboriosam ex quidem, fugiat, facilis magni?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga rem necessitatibus nisi perferendis deserunt sequi culpa eveniet, debitis eius quisquam maiores illo tempore nemo. Animi quia dicta tenetur nulla optio?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id voluptas sed recusandae voluptatum corrupti aliquam delectus! Eius tempora quidem itaque velit quasi repudiandae necessitatibus, facilis vero, ex quis officiis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi asperiores necessitatibus. Repellendus laboriosam accusamus quos eos suscipit voluptates. Nobis nulla, ipsa natus ut rem maxime beatae modi quidem molestiae.lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nulla fugiat soluta doloribus quibusdam, ducimus quas itaque unde minus ut nesciunt corrupti laboriosam amet et quasi cum laudantium sunt optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus soluta inventore magnam enim earum porro repellat labore harum consectetur quis maiores exercitationem velit in, nam veritatis, quod aliquam ea mollitia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit itaque beatae eveniet laborum cupiditate tenetur est, dolores accusamus, commodi deserunt eaque aliquam, pariatur dolor. Aliquid temporibus vel assumenda nobis. Labore?
+</div>
+<div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem fugit inventore aut possimus, reiciendis mollitia modi! Ratione distinctio placeat deleniti fuga vel illo laboriosam ex quidem, fugiat, facilis magni?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga rem necessitatibus nisi perferendis deserunt sequi culpa eveniet, debitis eius quisquam maiores illo tempore nemo. Animi quia dicta tenetur nulla optio?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id voluptas sed recusandae voluptatum corrupti aliquam delectus! Eius tempora quidem itaque velit quasi repudiandae necessitatibus, facilis vero, ex quis officiis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi asperiores necessitatibus. Repellendus laboriosam accusamus quos eos suscipit voluptates. Nobis nulla, ipsa natus ut rem maxime beatae modi quidem molestiae.lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nulla fugiat soluta doloribus quibusdam, ducimus quas itaque unde minus ut nesciunt corrupti laboriosam amet et quasi cum laudantium sunt optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus soluta inventore magnam enim earum porro repellat labore harum consectetur quis maiores exercitationem velit in, nam veritatis, quod aliquam ea mollitia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit itaque beatae eveniet laborum cupiditate tenetur est, dolores accusamus, commodi deserunt eaque aliquam, pariatur dolor. Aliquid temporibus vel assumenda nobis. Labore?
+</div>
+<div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem fugit inventore aut possimus, reiciendis mollitia modi! Ratione distinctio placeat deleniti fuga vel illo laboriosam ex quidem, fugiat, facilis magni?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga rem necessitatibus nisi perferendis deserunt sequi culpa eveniet, debitis eius quisquam maiores illo tempore nemo. Animi quia dicta tenetur nulla optio?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id voluptas sed recusandae voluptatum corrupti aliquam delectus! Eius tempora quidem itaque velit quasi repudiandae necessitatibus, facilis vero, ex quis officiis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eligendi asperiores necessitatibus. Repellendus laboriosam accusamus quos eos suscipit voluptates. Nobis nulla, ipsa natus ut rem maxime beatae modi quidem molestiae.lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga nulla fugiat soluta doloribus quibusdam, ducimus quas itaque unde minus ut nesciunt corrupti laboriosam amet et quasi cum laudantium sunt optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus soluta inventore magnam enim earum porro repellat labore harum consectetur quis maiores exercitationem velit in, nam veritatis, quod aliquam ea mollitia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit itaque beatae eveniet laborum cupiditate tenetur est, dolores accusamus, commodi deserunt eaque aliquam, pariatur dolor. Aliquid temporibus vel assumenda nobis. Labore?
+</div></div>
+

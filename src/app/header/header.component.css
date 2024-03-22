@@ -11,20 +11,31 @@
     top: -50px;
 }
 .navbar-top {
-    background:linear-gradient(to right,blue , green);
+    background:linear-gradient(to right,rgb(235, 176, 160) , rgb(160, 227, 237));
 }
 .navbar-top a{
     color:white;
 }
+
+.navbar-brand{
+    margin-right: 26pt;
+    padding-left: 0%;
+}
+
 .navbar-bottom{
     color: white;
     background-color: black;
 }
-.navbar-brand {
-    margin-right: 0%; /* Add some spacing between the logo and other navbar content */
+/* my-component.component.css */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 253, 253, 0.011); /* Adjust the opacity as needed */
+    z-index: 1;
   }
-  
-  .logo {
-    width: 18.75rem; /* Set a specific width for the logo */
-    height: auto; /* Allow the height to adjust proportionally */
-  }
+.container{
+    color: white;
+}
