@@ -9,7 +9,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class AddArticleComponent  {
 
- 
   articleForm: FormGroup;
   selectedFile: File | null = null;
 
@@ -18,7 +17,8 @@ export class AddArticleComponent  {
       title: [''],
       author: [''],
       content: [''],
-      file: ['']
+      industry:[''],
+      articleImage: ['']
     });
   }
   
@@ -26,14 +26,24 @@ export class AddArticleComponent  {
     // Handle form submission
     const formData = new FormData();
     formData.append('title', this.articleForm.value.title);
+    console.log(this.articleForm.value.title);
+    
     formData.append('author', this.articleForm.value.author);
-    formData.append('content', this.articleForm.value.content);
+    formData.append('content', this.articleForm.value.content);    
+    formData.append('industry', this.articleForm.value.industry);    
     if (this.selectedFile) {
-      formData.append('file', this.selectedFile, this.selectedFile.name);
+      formData.append('articleImage', this.selectedFile, this.selectedFile.name);
     }
 
+    const keys = Object.keys(formData)
+    keys.forEach(key=>{
+      console.log(key);
+      
+    });
+
+
     // Send formData to your server using HttpClient
-    this.http.post('http://localhost:3000/api/articles', formData).subscribe(
+    this.http.post('http://localhost:3000/api/v1/article/upload', formData).subscribe(
     response => {
       console.log('Server response:', response);
       // Reset the form after successful submission

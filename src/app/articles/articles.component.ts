@@ -5,40 +5,27 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  styleUrls: ['./articles.component.css'],
 })
 export class ArticlesComponent implements OnInit {
-  imageUrls: string[] = [];
-  selectedFile: File | undefined;
+  articles: any;
+  articleID: any;
 
-  constructor(private apiService: ApiServiceService, private http: HttpClient) { }
+  constructor(
+    private apiServices: ApiServiceService,
+    private http: HttpClient
+  ) {}
 
-  ngOnInit() {
-    this.fetchImageUrls();
+  ngOnInit(): void {
+    this.apiServices.getArticles().subscribe((data: any) => {
+      this.articles = data.allArticles;
+    });
   }
 
-  fetchImageUrls() {
-    this.http.get<any>('http://localhost:3000/images')
-      .subscribe(response => {
-        this.imageUrls = response.imageUrls || [];
-      });
+  deleteArticle(articleID: number) {
+    return this.apiServices.destroyArticle(articleID).subscribe((data: any) => {
+      this.ngOnInit();
+      console.log(articleID);
+    });
   }
-
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
-  }
-
-  onUpload() {
-    if (this.selectedFile) {
-      const formData = new FormData();
-      formData.append('image', this.selectedFile);
-
-      this.http.post<any>('http://localhost:3000/uploads', formData)
-        .subscribe(response => {
-          this.imageUrls.push(response.imageUrl);
-          console.log(this.imageUrls);
-        });
-    }
-  }
-  
 }

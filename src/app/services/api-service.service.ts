@@ -7,13 +7,17 @@ import { Injectable } from '@angular/core';
 })
 export class ApiServiceService {
 
-  private images_url = 'http://localhost:3000/uploads'
+  private article_url = 'http://localhost:3000/api/v1/article'
 
   constructor(private http : HttpClient, ) { }
-  getMessage(){
-    return this.http.get<{ message: string }>('http://localhost:3000/api/message');
+  getArticles(){
+    return this.http.get(this.article_url);
   }
-  getImageUrl(imageId: string){
-    return this.http.get(`${this.images_url}/${imageId}` ,  { responseType: 'blob' });
+
+  destroyArticle(articleID:number){
+    console.log(articleID);
+    
+    return this.http.delete(`http://localhost:3000/api/v1/article/${articleID}`)
   }
+
 }

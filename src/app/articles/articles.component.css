@@ -1,6 +1,9 @@
-/* articles.component.css */
-.image-container {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
+.container{
+  background-color: antiquewhite;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.container div{
+  margin: 10px;
+}

@@ -1,8 +1,23 @@
-<!-- articles.component.html -->
-<br><br><br>
-<input type="file" (change)="onFileSelected($event)">
-<button (click)="onUpload()">Upload</button>
-<br><br><br>
-<div *ngFor="let imageUrl of imageUrls" class="image-container">
-  <img [src]="imageUrl" height="300px" width="300px"><br><br>
+<!-- <div class="cards" *ngFor="let a of articles">
+ <div>
+  <h1>{{a.title}}</h1>
+  <p>{{a.content}}</p>
+   <h3>{{a.author}}</h3>
+ <img src="{{a.articleImage}}" alt="{{a.title}}" srcset=""> 
+ </div>  -->
+
+<!-- </div> -->
+<div class="container">
+
+  <div class="card" style="width: 18rem;" *ngFor="let a of articles">
+    <img src="{{a.articleImage}}"  style="height:12rem;" class="card-img-top" alt="{{a.title}}">
+    <div class="card-body">
+      <h5 class="card-title">{{a.title | slice:0:20}}</h5>
+      <p class="card-text">{{a.content | slice:0:100}}..</p>
+      <a href="{{a.articleImage}}" target="_blank" class="btn btn-primary">Read More</a>
+      <button class="btn btn-warning" (click)="deleteArticle(a._id)">Delete</button>
+      <p></p>
+
+    </div>
+  </div>
 </div>
