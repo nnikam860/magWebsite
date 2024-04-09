@@ -1,0 +1,9 @@
+.container{
+  background-color: rgb(230, 210, 210);
+  display: flex;
+  flex-flow: wrap;
+}
+
+.container div{
+  margin: 10px;
+}

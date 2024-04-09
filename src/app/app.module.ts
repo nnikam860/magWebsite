@@ -12,6 +12,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { ArticlesComponent } from './articles/articles.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ArticlesComponent,
     AddArticleComponent,
     ContactUsComponent,
+    FooterComponent,
     
   ],
   imports: [
@@ -29,7 +33,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,28 +1,117 @@
-.sliderBox{
+ 
+  .container{
+    background-color: rgb(129, 189, 183);
     display: flex;
-    height: 60vh;
-    width: 99vw;
-    background-color: rgb(157, 157, 201);
+    flex-flow: wrap;
+  }
+  
+  .container div{
+    margin: 10px;
+  }
+  .carousel-item img {
+    display: block;
+    margin: 0 auto;
+  }
+  .img1 {
+    max-height: 300rem; /* Adjust the maximum height as needed */
+    transition: max-height 0.5s ease;
+  }
+  
+  .img1.leftmost {
+    max-height: 100px; /* Adjust the height of the leftmost image */
+  }
+  
+  .img1.rightmost {
+    max-height: 100px; /* Adjust the height of the rightmost image */
+  }
+  
+/* .container{
+    background-color: antiquewhite;
+    display: flex;
+    flex-flow: wrap;
+  } */
+  
+  /* .container div{
+    margin: 10px;
+  } */
+body{
+    margin: 0;
+    padding: 0;
 }
+.small-image {
+    max-width: 100%; /* Adjust the maximum width as needed */
+  }
 
-.text-div{
-flex: 1;
-    background-color: rgb(35, 69, 99);
+.carouselBg{
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display :block;
+  background-color: rgb(243, 211, 211);
 }
-
-.inner-text-div{
-    margin: 50px;
+.content{
+  /* flex:1 1; */
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display :block;
+  background:rgb(255, 255, 255);
 }
-
-.slider-div{
+.right-slider1{
     justify-content: center;
-    display: flex;
     align-items: center;
+    display: flex;
     flex: 1;
-    background-color: rgb(162, 105, 29);
+    background-color: rgb(245, 210, 209);
+}
+.right-slider2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    background-color: rgb(246, 195, 193);
+}
+.right-slider3{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    background-color: rgb(247, 166, 163);
 }
 
-.carousel{
-    width: 30vw;
-    height: 30vh;
+ .img1{
+    width: 90vw;
+    height: 50vh;
 }
+.image-wrapper {
+    background-color: #000; /* Black background color */
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.imz{
+    width: auto;
+    height: 50%;
+}
+.container {
+    flex-grow: 1;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.background-wrapper {
+    /* background-image: url('assets/background.avif'); */
+    background-size: cover; /* Adjust background size as needed */
+    background-position: center; /* Adjust background position as needed */
+    width: 100%; /* Ensure full width */
+    height: 300rem; /* Set the desired height */
+  }
+  

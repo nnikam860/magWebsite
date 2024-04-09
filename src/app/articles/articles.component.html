@@ -1,2 +1,20 @@
-<p>articles works!</p>
-<h1>hello this is articles</h1>
+
+<div class="container">
+  <div class="card" style="width: 22rem;" *ngFor="let a of articles">
+    <div class="position-relative">
+      <img src="{{a.articleImage}}" style="height:15rem;" class="card-img-top" alt="{{a.title}}">
+      <div class="card-img-overlay d-flex align-items-end justify-content-center">
+        <h5 class="card-title text-white">{{a.title | slice:0:20}}</h5>
+      </div>
+    </div>
+    <div class="card-body" style="height: 15rem;">
+      <h5 class="card-title ">{{a.title | slice:0:20}}</h5>
+      <p class="card-text">{{a.content | slice:0:100}}..</p>
+      <div> Posted On:{{a.createdAt | slice:0:10}} </div>
+      <a href="{{a.articleImage}}" target="_blank" class="btn btn-primary">Read More</a>
+      <button class="btn btn-warning" (click)="deleteArticle(a._id)">Delete</button>
+      
+    </div>
+  </div>
+</div>
+
