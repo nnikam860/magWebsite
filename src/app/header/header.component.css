@@ -11,7 +11,12 @@
     top: -50px;
 }
 .navbar-top {
-    background:linear-gradient(to right,rgb(235, 176, 160) , rgb(160, 227, 237));
+    /* background:linear-gradient(to right,rgb(180, 208, 241) , rgba(1, 1, 1, 0.416),rgb(180, 208, 241)); */
+
+    /* background:linear-gradient(to right,rgb(230, 212, 212) , rgba(255, 255, 255, 0.95),rgb(184, 148, 148)); */
+    background:linear-gradient(to right,rgb(243,211,211),rgb(112, 203, 186));
+    /* 230, 212, 212    184, 148, 148    180, 208, 241   160,277,237 */
+
 }
 .navbar-top a{
     color:white;
@@ -38,4 +43,7 @@
   }
 .container{
     color: white;
+}
+.space{
+    flex: 31 1 auto;
 }

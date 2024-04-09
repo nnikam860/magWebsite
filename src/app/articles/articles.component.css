@@ -1,5 +1,5 @@
 .container{
-  background-color: antiquewhite;
+  background-color: rgb(230, 210, 210);
   display: flex;
   flex-flow: wrap;
 }

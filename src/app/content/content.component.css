@@ -1,10 +1,39 @@
-.content-and-slider{
+ 
+  .container{
+    background-color: rgb(129, 189, 183);
     display: flex;
-    width: 99vw;
-    height: 60vh;
+    flex-flow: wrap;
+  }
+  
+  .container div{
+    margin: 10px;
+  }
+  .carousel-item img {
+    display: block;
+    margin: 0 auto;
+  }
+  .img1 {
+    max-height: 300rem; /* Adjust the maximum height as needed */
+    transition: max-height 0.5s ease;
+  }
+  
+  .img1.leftmost {
+    max-height: 100px; /* Adjust the height of the leftmost image */
+  }
+  
+  .img1.rightmost {
+    max-height: 100px; /* Adjust the height of the rightmost image */
+  }
+  
+/* .container{
     background-color: antiquewhite;
-}
-
+    display: flex;
+    flex-flow: wrap;
+  } */
+  
+  /* .container div{
+    margin: 10px;
+  } */
 body{
     margin: 0;
     padding: 0;
@@ -13,10 +42,20 @@ body{
     max-width: 100%; /* Adjust the maximum width as needed */
   }
 
-
-.left-content{
-    flex: 1;
-    background-color: rgb(250, 237, 234);
+.carouselBg{
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display :block;
+  background-color: rgb(243, 211, 211);
+}
+.content{
+  /* flex:1 1; */
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display :block;
+  background:rgb(255, 255, 255);
 }
 .right-slider1{
     justify-content: center;

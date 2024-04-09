@@ -1,11 +1,11 @@
 
-<!-- my-component.component.html -->
 <div class="container-fluid p-0">
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-top"  (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
-    <div class="container-fluid container">
-      <a class="navbar-brand" href="#" style="position: center;">
-        <img src="assets/logo.png" alt="" width="150" height="50">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-top bg-body-tertiary"  (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
+    <div class="container-fluid container ">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logobgR.png" alt="logo" width="280rem" height="40rem">
       </a>
+    <span class="space"></span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,24 +17,24 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/articles']">Articles</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" [routerLink]="['/articles']">Magazines</a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link" [routerLink]="['/articles']">Industry</a>
-        </li>
+        </li> -->
        
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/addarticles']">Add Articles</a>
-        </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item ">
+          <a class="nav-link disabled" [routerLink]="['/addarticles']">Add Articles</a>
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link" [routerLink]="['/addarticles']">Add Magazines</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link"  [routerLink]="['/contactus']">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  [routerLink]="['/contactus']">About Us</a>
+          <a class="nav-link"  [routerLink]="['/aboutUs']">About Us</a>
         </li>
       </ul>
       <!-- <form class="d-flex" role="search">
@@ -45,7 +45,6 @@
   </div>
   </nav>
   
-</div>
 
 <nav class="navbar navbar-bottom">
  
