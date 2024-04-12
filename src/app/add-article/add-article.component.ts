@@ -43,7 +43,7 @@ export class AddArticleComponent  {
 
 
     // Send formData to your server using HttpClient
-    this.http.post('http://localhost:3000/api/v1/article/upload', formData).subscribe(
+    this.http.post('http://api.fempreneurmagazine.com/api/v1/article', formData).subscribe(
     response => {
       console.log('Server response:', response);
       // Reset the form after successful submission
