@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiServiceService {
 
-  private article_url = 'http://api.fempreneurmagazine.com/api/v1/article'
+  private article_url = 'https://api.fempreneurmagazine.com/api/v1/article'
 
   constructor(private http : HttpClient, ) { }
   getArticles(){
@@ -17,7 +17,7 @@ export class ApiServiceService {
   destroyArticle(articleID:number){
     console.log(articleID);
     
-    return this.http.delete(`http://api.fempreneurmagazine.com/api/v1/article/${articleID}`)
+    return this.http.delete(`https://api.fempreneurmagazine.com/api/v1/article/${articleID}`)
   }
 
 }
