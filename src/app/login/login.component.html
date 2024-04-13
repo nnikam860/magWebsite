@@ -1,0 +1,31 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputEmail6" class="col-form-label">Email ID : </label>
+            </div>
+            <div class="col-auto">
+                <input type="email" id="email" class="form-control" formControlName="email"  aria-describedby="passwordHelpInline">
+            </div> 
+        </div>
+        
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Password</label>
+            </div>
+            <div class="col-auto">
+                <input type="password" id="password" class="form-control" formControlName="password" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    Must be 8-20 characters long.
+                </span>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Login</button>
+        
+    </form> 
+    </div>
+    
