@@ -18,4 +18,12 @@ export class HeaderComponent {
       this.navbarfixed = false;
     }
   }
+ 
+  activeTab: string = ''; // Variable to store active tab
+
+  constructor() { }
+
+  setActive(tab: string) {
+    this.activeTab = tab;
+  }
 }
