@@ -35,11 +35,8 @@ export class AddArticleComponent  {
       formData.append('articleImage', this.selectedFile, this.selectedFile.name);
     }
 
-    const keys = Object.keys(formData)
-    keys.forEach(key=>{
-      console.log(key);
-      
-    });
+  console.log(formData);
+  
 
 
     // Send formData to your server using HttpClient

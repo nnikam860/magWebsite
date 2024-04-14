@@ -6,8 +6,10 @@ import { AddArticleComponent } from './add-article/add-article.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
-const routes: Routes = [{path: '', component: ContentComponent},
+const routes: Routes = [ {path:'dashboard', component:DashboardComponent},
+  {path: '', component: ContentComponent},
                         {path:'articles', component: ArticlesComponent},
                       {path:'addarticles', component:AddArticleComponent},
                     {path:'contactus', component:ContactUsComponent},

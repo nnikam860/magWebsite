@@ -82,6 +82,8 @@ const loginUser = asyncHandler(async (req, res) =>{
 
   
   const {email, password} = req.body
+  console.log(req.body);
+  
   console.log(typeof(email));
   
 
@@ -118,7 +120,7 @@ const loginUser = asyncHandler(async (req, res) =>{
       new ApiResponse(
           200, 
           {
-              //user: loggedInUser
+             // user: loggedInUser
           },
           "User logged In Successfully"
       )

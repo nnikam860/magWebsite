@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" enctype="multipart/form-data">
 
         <div class="row g-3 align-items-center">
             <div class="col-auto">
@@ -25,6 +25,7 @@
         </div>
         
         <button type="submit" class="btn btn-primary">Login</button>
+        <span *ngIf="errorMessage" class="alert alert-danger"> {{ errorMessage }}</span>
         
     </form> 
     </div>

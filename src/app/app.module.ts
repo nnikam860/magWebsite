@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     AddArticleComponent,
     ContactUsComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent
     
   ],
   imports: [
