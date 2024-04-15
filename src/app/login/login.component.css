@@ -1,9 +1,9 @@
 .container{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    max-width: 50rem;
-    background-color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: 35rem;
+    background-color: rgb(35, 34, 34);
     border-radius: 2rem;
 }

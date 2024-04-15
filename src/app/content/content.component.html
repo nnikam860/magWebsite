@@ -11,13 +11,16 @@
     </div>
     <div class="overlay"></div>
   </div></div>  -->
-  <div class="text-Container">
+  <div class="text-container" id="textContainer">
     <img src="assets/background.jpg" alt="Notebook" style="width:100%; height:32rem;">
     <div class="text-block">
       <h1>Digital Business Review Magazine</h1>
       <p>Welcome to Digital Business Review Magazine, your premier source for insightful analysis, in-depth interviews, and cutting-edge trends in the world of digital business.</p>
     </div>
   </div>
+  
+  
+  
   <div class="carouselBg">
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner justify-content-center"> <!-- Add justify-content-center class here -->
@@ -43,20 +46,21 @@
     </div>
   </div>
   <div class="imgcontainer">
-    <div class="content-and-slider" *ngFor="let article of articles; let i = index" >
+    <div class="content-and-slider">
       <div class="left-content">
           <h1 style="text-align: center;">Latest Articles</h1>
- <div>      <p class="card-text">{{article[0].content | slice:0:500}}..</p></div>    
-  </div>
+      <div>      <p class="card-text">{{articles[0].content | slice:0:500}}..</p>
+      </div>      </div>
       <div class="right-slider">
         <div class="widget-content px-0">
           <div class="chart d-flex justify-content-center">
-            <img src="{{article[0]?.articleImage}}" alt="{{article[0]?.title}}" class="large-image" alt="Image 1">
+            <img src="{{articles[0]?.articleImage}}" 
+            alt="{{articles[0]?.title}}" 
+            class="large-image" alt="Image 1">
             <!-- <a href="{{articles[0]?.articleImage}}" target="_blank" class="btn btn-primary">Read More</a> -->
           </div>
         </div>
       </div>
-      
       
         
           <!-- <div id="carouselExampleAutoplaying" class="carousel slide mx-4" data-bs-ride="carousel">
@@ -108,7 +112,7 @@
     
 
       
-      <div class="container1" style="background-color: aqua;">
+      <div class="container1" style="background-color: rgb(88, 92, 92);">
     <div class="row justify-content-between">
       <div class="col-md-3 mt-4 mb-5" *ngFor="let a of articles; let i = index" [class.active]="i === 0">
         <div class="widget-content px-0">
