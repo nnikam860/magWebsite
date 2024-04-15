@@ -2,3 +2,8 @@
     color: white;
     background-color: black;
 }
+.image{
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;
+}

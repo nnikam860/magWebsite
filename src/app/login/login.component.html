@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" enctype="multipart/form-data">
 
         <div class="row g-3 align-items-center">
@@ -19,7 +19,7 @@
             </div>
             <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
-                    Must be 8-20 characters long.
+                 
                 </span>
             </div>
         </div>
@@ -28,5 +28,22 @@
         <span *ngIf="errorMessage" class="alert alert-danger"> {{ errorMessage }}</span>
         
     </form> 
-    </div>
+    </div> -->
+    <div class="container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" enctype="multipart/form-data">
+          <label style="color: white;" for="inputEmail6">Email address</label>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+        </div><br>
     
+          <label style="color: white;" for="inputPassword6">Password</label>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+           </div><br><br>
+    
+          <div class="d-grid gap-2 col-6 mx-auto">
+          <button routerLink="/addArticles" type="submit" class="btn btn-light">Login</button>
+          <!-- <span *ngIf="errorMessage" class="alert alert-danger"> {{ errorMessage }}</span> -->
+          </div>
+      </form>
+        </div>
