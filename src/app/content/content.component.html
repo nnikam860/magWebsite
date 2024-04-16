@@ -11,16 +11,13 @@
     </div>
     <div class="overlay"></div>
   </div></div>  -->
-  <div class="text-container" id="textContainer">
+  <div class="text-Container">
     <img src="assets/background.jpg" alt="Notebook" style="width:100%; height:32rem;">
     <div class="text-block">
       <h1>Digital Business Review Magazine</h1>
       <p>Welcome to Digital Business Review Magazine, your premier source for insightful analysis, in-depth interviews, and cutting-edge trends in the world of digital business.</p>
     </div>
   </div>
-  
-  
-  <br><br>
   <div class="carouselBg">
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner justify-content-center"> <!-- Add justify-content-center class here -->
@@ -31,7 +28,7 @@
             <a href="{{a.articleImage}}" target="_blank" class="btn btn-primary">Read More</a>
           </div>
           <div class="carousel-caption d-none d-md-block">
-            <h5>{{ articles.allArticles[0].title }}</h5>
+            <h5>{{a.title}}</h5>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -97,6 +94,18 @@
         <h1 style="text-align: center;"><b>Digital Business Review Magazine</b></h1>
         <p style="text-align: center;">Welcome to Digital Business Review Magazine, your premier source for insightful analysis, in-depth interviews, and cutting-edge trends in the world of digital business.</p>
         <h3 style="text-align: center;">Coming Soon.....</h3>
+      
+        <h1 style="text-align: center;"><b>Digital Business Review Magazine</b></h1>
+        <p style="text-align: center;">Welcome to Digital Business Review Magazine, your premier source for insightful analysis, in-depth interviews, and cutting-edge trends in the world of digital business.</p>
+        <h3 style="text-align: center;">Coming Soon.....</h3>
+     
+        <h1 style="text-align: center;"><b>Digital Business Review Magazine</b></h1>
+        <p style="text-align: center;">Welcome to Digital Business Review Magazine, your premier source for insightful analysis, in-depth interviews, and cutting-edge trends in the world of digital business.</p>
+        <h3 style="text-align: center;">Coming Soon.....</h3>
+      
+        <h1 style="text-align: center;"><b>Digital Business Review Magazine</b></h1>
+        <p style="text-align: center;">Welcome to Digital Business Review Magazine, your premier source for insightful analysis, in-depth interviews, and cutting-edge trends in the world of digital business.</p>
+        <h3 style="text-align: center;">Coming Soon.....</h3>
       </div>
     </div>
   </div>
@@ -113,9 +122,9 @@
     
 
       
-      <div class="container1" style="background-color: rgb(88, 92, 92);">
+      <div class="container1">
     <div class="row justify-content-between">
-      <div class="col-md-3 mt-4 mb-5" *ngFor="let a of articles; let i = index">
+      <div class="col-md-3 mt-4 mb-5" *ngFor="let a of articles; let i = index" [class.active]="i === 0">
         <div class="widget-content px-0">
           <div class="chart d-flex justify-content-center">
             <div class="image-wrapper" style="background-color: #000;">

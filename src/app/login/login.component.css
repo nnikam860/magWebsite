@@ -1,9 +1,15 @@
-.container{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    max-width: 35rem;
-    background-color: rgb(35, 34, 34);
-    border-radius: 2rem;
-}
+.text-container {
+    position: relative;
+    width: 100%;
+  }
+.text-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.527);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    width: 40%;
+  }
