@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  articles: any;
+  articles:any[]=[];
   articleID: any;
 
   constructor(
@@ -19,8 +19,7 @@ export class ContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiServices.getArticles().subscribe((data: any) => {
-      this.articles = data.allArticles;
-      
+      this.articles = data.allArticles;    
     });
   }
 

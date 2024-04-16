@@ -31,7 +31,7 @@
             <a href="{{a.articleImage}}" target="_blank" class="btn btn-primary">Read More</a>
           </div>
           <div class="carousel-caption d-none d-md-block">
-            <h5>{{a.title}}</h5>
+            <h5>{{ articles.allArticles[0].title }}</h5>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -56,11 +56,12 @@
           <div class="chart d-flex justify-content-center">
             <img src="{{articles[0]?.articleImage}}" 
             alt="{{articles[0]?.title}}" 
-            class="large-image" alt="Image 1" style="height: 15rem; width: 20rem;">
+            class="large-image" alt="Image 1">
             <!-- <a href="{{articles[0]?.articleImage}}" target="_blank" class="btn btn-primary">Read More</a> -->
           </div>
         </div>
       </div>
+      
       
         
           <!-- <div id="carouselExampleAutoplaying" class="carousel slide mx-4" data-bs-ride="carousel">
@@ -114,7 +115,7 @@
       
       <div class="container1" style="background-color: rgb(88, 92, 92);">
     <div class="row justify-content-between">
-      <div class="col-md-3 mt-4 mb-5" *ngFor="let a of articles; let i = index" [class.active]="i === 0">
+      <div class="col-md-3 mt-4 mb-5" *ngFor="let a of articles; let i = index">
         <div class="widget-content px-0">
           <div class="chart d-flex justify-content-center">
             <div class="image-wrapper" style="background-color: #000;">
