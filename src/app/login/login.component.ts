@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,51 +12,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
   loginForm!: FormGroup;
   errorMessage: string = '';
 
-  constructor(private fb:FormBuilder, private http: HttpClient, private router: Router){
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  )
+  {
     this.loginForm = this.fb.group({
       email: [''],
       password: ['']
     });
   }
-
-  
+  // ngOnInit():void{
+  //   this.authService.reloadAdmin()
+  // }
   onSubmitLogin() {
-
-    console.log(this.loginForm.value.password);
-
-    let headers = new HttpHeaders();
-    headers = headers.set('Content-type', 'application/json')
-    
-
-    const body = JSON.stringify(this.loginForm.value);
-    
-    this.http.post('http://localhost:3000/api/v1/admin/login', body, {headers}).subscribe(
+    const { email, password } = this.loginForm.value;
+    this.authService.userlogin(email, password)
+    .subscribe(
       response => {
-        console.log('Server response:', response);{
-        this.router.navigate(['/dashboard'])
-        }     
+        console.log('Server response:', response);
+        this.router.navigate(['/dashboard']);
         // Reset the form after successful submission
         this.loginForm.reset();
       },
       error => {
-        console.error('Error', error);{
-          if (error.status === 400){
-            this.errorMessage = 'Invalid Email or Password'
-          }
-          else{
-            this.errorMessage = 'Something Went Wrong'
-          }
-        }
+        console.error('Error', error);
+        this.errorMessage = error;
       }
     );
-    
   }
-
-
- 
-
 }
