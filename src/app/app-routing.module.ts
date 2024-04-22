@@ -8,15 +8,17 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { authGuard } from './guard/auth.guard';
 
-const routes: Routes = [ {path:'dashboard', component:DashboardComponent},
-  {path: '', component: ContentComponent},
-                        {path:'articles', component: ArticlesComponent},
-                      {path:'addarticles', component:AddArticleComponent},
-                    {path:'contactus', component:ContactUsComponent},
-                    {path:'footer', component:FooterComponent},
-                    {path:'login',component:LoginComponent},
-                    {path:'aboutus',component:AboutusComponent}
+const routes: Routes = [ 
+                         {path: '', component: ContentComponent},
+                         {path:'articles', component: ArticlesComponent},
+                         {path:'addarticles', component:AddArticleComponent, canActivate:[authGuard]},
+                         {path:'contactus', component:ContactUsComponent},
+                         {path:'footer', component:FooterComponent},
+                         {path:'login',component:LoginComponent},
+                         {path:'aboutus',component:AboutusComponent},
+                         {path:'dashboard', component:DashboardComponent, canActivate:[authGuard]},
 
                   ];
 
