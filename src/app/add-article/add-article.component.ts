@@ -35,15 +35,12 @@ export class AddArticleComponent  {
       formData.append('articleImage', this.selectedFile, this.selectedFile.name);
     }
 
-    const keys = Object.keys(formData)
-    keys.forEach(key=>{
-      console.log(key);
-      
-    });
+  console.log(formData);
+  
 
 
     // Send formData to your server using HttpClient
-    this.http.post('http://api.fempreneurmagazine.com/api/v1/article', formData).subscribe(
+    this.http.post('https://api.fempreneurmagazine.com/api/v1/article', formData).subscribe(
     response => {
       console.log('Server response:', response);
       // Reset the form after successful submission
