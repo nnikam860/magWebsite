@@ -19,7 +19,7 @@ export class AuthService {
     const body = JSON.stringify({ email, password });
     
     return new Observable(observer => {
-      this.http.post('http://localhost:3000/api/v1/admin/login', body, { headers, observe: 'response' }).subscribe(
+      this.http.post('https://api.digitalbusinessreview.com/api/v1/admin/login', body, { headers, observe: 'response' }).subscribe(
         response1 => {
           this.isUserLoggedIn.next(true);
           localStorage.setItem('admin',JSON.stringify(response1.body))      
