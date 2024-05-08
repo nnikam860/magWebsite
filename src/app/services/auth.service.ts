@@ -4,12 +4,15 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {BehaviorSubject} from 'rxjs';
 import { Route, Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   // let headers= new HttpHeaders();
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
+  user = new BehaviorSubject(null);
+  private tokenExpirationTimer: any;
   constructor(private http: HttpClient, private router: Router) { }
 
   userlogin(email: string, password: string): Observable<any> {
@@ -38,6 +41,35 @@ export class AuthService {
       );
     });
   }
+  logout() {
+    this.user.next(null);
+    sessionStorage.clear();
+    localStorage.clear();
+    // sessionStorage.removeItem('userData');
+    // sessionStorage.removeItem('cloudCrmIDs');
+    // sessionStorage.removeItem('crmIDs');
+    // sessionStorage.removeItem('nonCloudcrmIDs');
+    // sessionStorage.removeItem('sideMenu');
+    // sessionStorage.removeItem('cloudRequestType');
+    // localStorage.removeItem('userData');
+    // localStorage.removeItem('cloudCrmIDs');
+    // localStorage.removeItem('crmIDs');
+    // localStorage.removeItem('nonCloudcrmIDs');
+    // localStorage.removeItem('sideMenu');
+    // localStorage.removeItem('cloudRequestType');
+    this.router.navigate(['/']);
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer);
+    }
+    this.tokenExpirationTimer = null;
+  }
+
+  autoLogout(expirationDuration: number) {
+    this.tokenExpirationTimer = setTimeout(() => {
+      this.logout();
+    }, expirationDuration);
+  }
+
   // reloadAdmin(){
   //   if(localStorage.getItem('admin')){
   //     this.isUserLoggedIn.next(true);

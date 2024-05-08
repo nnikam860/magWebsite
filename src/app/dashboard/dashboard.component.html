@@ -4,7 +4,12 @@
     <div class="text-block">
             <button type="button" class="btn btn-dark" routerLink="/addarticles">Add Article</button>
             
-            <button type="button" class="btn btn-dark" routerLink="/addMagazine">Add Magazine</button>
-           
+            <button type="button" class="btn btn-dark" routerLink="/addMagazines">Add Magazine</button>
+            <li >
+                <a class="more-opt-open" (click)="logout()" href="javascript:void(0)">
+                      <button style="width: fit-content; height: fit-content; border-radius: 30rem;" class="signout" matTooltip="Signout" matTooltipPosition="below">Signout</button>
+                </a>
+              </li>
    </div>
+   
 </div>
