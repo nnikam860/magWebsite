@@ -9,7 +9,7 @@ cloudinary.config({
 });
 
 const uploadOnCloudinary = async (localFilePath) => {
-    console.log(localFilePath);
+    console.log(localFilePath + " at line 12 cloudinary");
     
     try {
         if (!localFilePath) return null 

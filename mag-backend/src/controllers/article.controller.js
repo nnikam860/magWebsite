@@ -19,8 +19,8 @@ const uploadArticle = asyncHandler(async (req, res) => {
   // return res
 
   const { title, author, content, industry } = req.body;
-  console.log(req.body);
-  console.log(req.files)
+  console.log(req.body + " at line 22");
+  console.log(req.files + " at line 23")
   if (
     [title, author, content, industry].some((field) => field?.trim() === "")
   ) {
@@ -36,7 +36,7 @@ const uploadArticle = asyncHandler(async (req, res) => {
   }
 
   const localFilePath = req.files?.imageArticle[0]?.path;
-  console.log(localFilePath);
+  console.log(localFilePath + " at line 39");
   
 
   if (!localFilePath) {
@@ -44,11 +44,10 @@ const uploadArticle = asyncHandler(async (req, res) => {
 
   }
 
-
-  
   const imageArticle = await uploadOnCloudinary(localFilePath)
 
-
+  console.log(imageArticle + " at line 49");
+  
 
   const article = await Article.create({
     title,
