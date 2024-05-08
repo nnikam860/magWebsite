@@ -35,18 +35,18 @@ const uploadArticle = asyncHandler(async (req, res) => {
     throw new ApiError(409, "Article with this title already exists");
   }
 
-  const articleImageLocalPath = req.files?.imageArticle[0]?.path;
-  console.log(articleImageLocalPath);
+  const localFilePath = req.files?.imageArticle[0]?.path;
+  console.log(localFilePath);
   
 
-  if (!articleImageLocalPath) {
+  if (!localFilePath) {
       throw new ApiError(400, "Avatar file is required")
 
   }
 
 
   
-  const imageArticle = await uploadOnCloudinary(articleImageLocalPath)
+  const imageArticle = await uploadOnCloudinary(localFilePath)
 
 
 
