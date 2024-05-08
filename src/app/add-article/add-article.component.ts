@@ -18,7 +18,7 @@ export class AddArticleComponent  {
       author: [''],
       content: [''],
       industry:[''],
-      articleImage: ['']
+      imageArticle: ['']
     });
   }
   
@@ -32,7 +32,7 @@ export class AddArticleComponent  {
     formData.append('content', this.articleForm.value.content);    
     formData.append('industry', this.articleForm.value.industry);    
     if (this.selectedFile) {
-      formData.append('articleImage', this.selectedFile, this.selectedFile.name);
+      formData.append('imageArticle', this.selectedFile, this.selectedFile.name);
     }
 
   console.log(formData);
@@ -40,7 +40,7 @@ export class AddArticleComponent  {
 
 
     // Send formData to your server using HttpClient
-    this.http.post('https://api.digitalbusinessreview/api/v1/article/upload', formData).subscribe(
+    this.http.post('https://localhost:3000/api/v1/article/upload', formData).subscribe(
     response => {
       console.log('Server response:', response);
       // Reset the form after successful submission

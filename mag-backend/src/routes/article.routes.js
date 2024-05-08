@@ -7,8 +7,8 @@ const router = Router();
 router.route("/upload").post(
   upload.fields([
     {
-      name: "articleImage",  //code to upload file to cloudinary using middleware
-      maxCount: 1,
+      name: "imageArticle",  //code to upload file to cloudinary using middleware
+      maxCount: 9000,
     },
   ]),
 
