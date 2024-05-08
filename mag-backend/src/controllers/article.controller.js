@@ -34,7 +34,6 @@ const uploadArticle = asyncHandler(async (req, res) => {
   }
 
   const localFilePath = req.files?.imageArticle[0]?.path;
-  console.log(localFilePath + " at line 39");
   
 
   if (!localFilePath) {
@@ -44,8 +43,9 @@ const uploadArticle = asyncHandler(async (req, res) => {
 
   const imageArticle = await uploadOnCloudinary(localFilePath)
 
-  console.log(imageArticle + " at line 49");
-  
+  if (!imageArticle) {
+    throw new ApiError(400, "Avatar file is required")
+}
 
   const article = await Article.create({
     title,
