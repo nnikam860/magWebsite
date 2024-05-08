@@ -1,4 +1,5 @@
 import {v2 as cloudinary} from "cloudinary"
+import { log } from "console";
 import fs from "fs"
 
 
@@ -12,6 +13,8 @@ const uploadOnCloudinary = async (localFilePath) => {
     console.log(localFilePath + " at line 12 cloudinary");
     
     try {
+        console.log(localFilePath + " at line 16 cloudinary");
+        
         if (!localFilePath) return null 
         //upload the file on cloudinary
         const response = await cloudinary.uploader.upload(localFilePath, {
