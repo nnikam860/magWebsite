@@ -19,8 +19,6 @@ const uploadArticle = asyncHandler(async (req, res) => {
   // return res
 
   const { title, author, content, industry } = req.body;
-  console.log(req.body + " at line 22");
-  console.log(req.files + " at line 23")
   if (
     [title, author, content, industry].some((field) => field?.trim() === "")
   ) {
