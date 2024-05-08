@@ -11,17 +11,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://www.digitalbusinessreview.com');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-});
 
-app.use(cors({
-    origin:process.env.CORS_ORIGIN ,
-    credentials: true
-}))
 
 
 app.use(express.json({limit:"16kb"}))

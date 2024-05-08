@@ -24,7 +24,7 @@ const articleSchema = new Schema ({
         type: String,
         enum: ["Manufacturing", "Service", "Financial"]
     },
-    articleImage:{
+    imageArticle:{
         type:String, // cloudinary url
         required: true,
         

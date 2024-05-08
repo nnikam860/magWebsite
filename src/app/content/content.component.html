@@ -23,10 +23,10 @@
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner justify-content-center"> <!-- Add justify-content-center class here -->
         <div class="carousel-item" *ngFor="let a of articles; let i = index" [class.active]="i === 0">
-          <img src="{{a.articleImage}}" class="d-block img1 mx-auto" alt="{{a.title}}"> 
+          <img src="{{a.imageArticle}}" class="d-block img1 mx-auto" alt="{{a.title}}"> 
           <div class="carousel-caption d-none ">
             <h5>"{{a.title}}"</h5>
-            <a href="{{a.articleImage}}" target="_blank" class="btn btn-primary">Read More</a>
+            <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary">Read More</a>
           </div>
           <div class="carousel-caption d-none d-md-block">
             <h5>{{a.title}}</h5>
@@ -52,10 +52,10 @@
       <div class="right-slider">
         <div class="widget-content px-0">
           <div class="chart d-flex justify-content-center">
-            <img src="{{articles[0]?.articleImage}}" 
+            <img src="{{articles[0]?.imageArticle}}" 
             alt="{{articles[0]?.title}}" 
             class="large-image" alt="Image 1">
-            <!-- <a href="{{articles[0]?.articleImage}}" target="_blank" class="btn btn-primary">Read More</a> -->
+            <!-- <a href="{{articles[0]?.imageArticle}}" target="_blank" class="btn btn-primary">Read More</a> -->
           </div>
         </div>
       </div>
@@ -129,8 +129,8 @@
         <div class="widget-content px-0">
           <div class="chart d-flex justify-content-center">
             <div class="image-wrapper" style="background-color: #000;">
-              <img src="{{a.articleImage}}" alt="{{a.title}}"class="img-fluid h-100" alt="Image 1">
-              <a href="{{a.articleImage}}" target="_blank" class="btn btn-primary">Read More</a>
+              <img src="{{a.imageArticle}}" alt="{{a.title}}"class="img-fluid h-100" alt="Image 1">
+              <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary">Read More</a>
 
             </div>
           </div>
