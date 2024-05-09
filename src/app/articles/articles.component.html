@@ -4,15 +4,15 @@
     <div class="position-relative">
       <img src="{{a.imageArticle}}" style="height:15rem;" class="card-img-top" alt="{{a.title}}">
       <div class="card-img-overlay d-flex align-items-end justify-content-center">
-        <h5 class="card-title text-white">{{a.title | slice:0:20}}</h5>
+        <!-- <h5 class="card-title text-white">{{a.title | slice:0:20}}</h5> -->
       </div>
     </div>
     <div class="card-body" style="height: 15rem;">
-      <h5 class="card-title ">{{a.title | slice:0:20}}</h5>
-      <p class="card-text">{{a.content | slice:0:100}}..</p>
+      <h5 class="card-title ">{{a.title }}</h5>
+      <p class="card-text">{{a.content | slice:0:50}}..</p>
       <div> Posted On:{{a.createdAt | slice:0:10}} </div>
-      <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary">Read More</a>
-      <button class="btn btn-warning" (click)="deleteArticle(a._id)">Delete</button>
+      <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary center-align ">Read More</a>
+      <!-- <button class="btn btn-warning" (click)="deleteArticle(a._id)">Delete</button> -->
       
     </div>
   </div>

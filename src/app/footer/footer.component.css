@@ -6,4 +6,8 @@
     display: flex;
     justify-content: center; /* Horizontally center the content */
     align-items: center;
+    margin-bottom: 2rem;
+}
+.justify{
+    text-align: justify;
 }
