@@ -12,9 +12,16 @@ export class AuthService {
   // let headers= new HttpHeaders();
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
   user = new BehaviorSubject(null);
+  private loggedIn = false;
   private tokenExpirationTimer: any;
-  constructor(private http: HttpClient, private router: Router) { }
-
+  activeTabSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+   constructor(private http: HttpClient, private router: Router) { 
+    this.clearUserData();
+   }
+   setActiveTab(tab: string) {
+    console.log('Setting active tab:', tab);
+    this.activeTabSubject.next(tab);
+  }
   userlogin(email: string, password: string): Observable<any> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-type', 'application/json');
@@ -62,6 +69,7 @@ export class AuthService {
       clearTimeout(this.tokenExpirationTimer);
     }
     this.tokenExpirationTimer = null;
+    this.isUserLoggedIn.next(false);
   }
 
   autoLogout(expirationDuration: number) {
@@ -69,7 +77,19 @@ export class AuthService {
       this.logout();
     }, expirationDuration);
   }
-
+  setLoggedInUser(user: any) {
+    this.user.next(user);
+    this.isUserLoggedIn.next(true);
+  }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('admin');
+  }
+  clearUserData() {
+    // Clear any user-related data such as tokens, logged-in status, etc.
+    localStorage.removeItem('admin');
+    this.isUserLoggedIn.next(false); // Assuming you have a BehaviorSubject to track login status
+    this.activeTabSubject.next(''); // Assuming you have a BehaviorSubject to track active tab
+  }
   // reloadAdmin(){
   //   if(localStorage.getItem('admin')){
   //     this.isUserLoggedIn.next(true);

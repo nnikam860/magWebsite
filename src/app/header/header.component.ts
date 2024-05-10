@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,13 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   navbarfixed:boolean = false;
+  activeTab: string = ''; // Variable to store active tab
+  isMenuOpen: boolean = false;
+   constructor(private authService: AuthService) {
+    this.authService.activeTabSubject.subscribe(tab => {
+      this.activeTab = tab;
+    });
+  }
 
   @HostListener('window:scroll',['$event']) onscroll(){
     if(window.scrollY > 100)
@@ -18,12 +26,15 @@ export class HeaderComponent {
       this.navbarfixed = false;
     }
   }
- 
-  activeTab: string = ''; // Variable to store active tab
 
-  constructor() { }
-
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
   setActive(tab: string) {
     this.activeTab = tab;
+    this.authService.setActiveTab(tab);    
   }
 }

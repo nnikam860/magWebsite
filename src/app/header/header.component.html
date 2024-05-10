@@ -6,9 +6,9 @@
         <img src="assets/logobgR.jpg" alt="logo" width="280rem" height="40rem">
       </a>
     <span class="space"></span>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+  </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" (click)="setActive('home')" [class.active]="activeTab === 'home'">
@@ -32,6 +32,15 @@
         <li class="nav-item" (click)="setActive('login')" [class.active]="activeTab === 'login'" >
           <a class="nav-link btn"  [routerLink]="['/login']">Login</a>
         </li>
+        <!-- <li><a *ngIf="isLoggedIn()" routerLink="/addarticles">Add Article</a> -->
+        <!-- </li> -->
+        
+          <!-- Add Magazine menu item -->
+          <li class="nav-item" *ngIf="isLoggedIn()" [class.active]="activeTab === 'admin'" (click)="setActive('admin')">
+            <a class="nav-link btn" routerLink="/dashboard">Admin</a>
+          </li>
+          
+       
       </ul>
       
       <!-- <form class="d-flex" role="search">
