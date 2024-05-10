@@ -50,7 +50,7 @@ export class AddArticleComponent  {
     error => {
       console.error('Error:', error);
     }
-  );
+  ); alert('Article uploaded successfully!');
   }
 
   onFileSelected(event: any) {

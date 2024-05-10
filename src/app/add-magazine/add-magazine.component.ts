@@ -34,7 +34,7 @@ export class AddMagazineComponent {
       formData.append('imageArticle', this.selectedFile, this.selectedFile.name);
     }
 
-  console.log(formData);
+    console.log(formData);
       // Send formData to your server using HttpClient
     this.http.post('https://api.digitalbusinessreview.com/api/v1/article/upload', formData).subscribe(
     response => {
@@ -47,6 +47,7 @@ export class AddMagazineComponent {
       console.error('Error:', error);
     }
   );
+  alert('Magazine uploaded successfully!');
   }
 
   onFileSelected(event: any) {

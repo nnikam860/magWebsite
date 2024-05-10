@@ -40,10 +40,12 @@ export class LoginComponent {
           });
           // Reset the form after successful submission
           this.loginForm.reset();
+          alert('Logged in successfully!');
         },
         error => {
           console.error('Error', error);
           this.errorMessage = error;
+          alert('Invalid credentials. Please try again.');
         }
       );
   }

@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="card" style="width: 22rem;" *ngFor="let a of articles">
     <div class="position-relative">
@@ -12,9 +11,7 @@
       <p class="card-text">{{a.content | slice:0:50}}..</p>
       <div> Posted On:{{a.createdAt | slice:0:10}} </div>
       <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary center-align ">Read More</a>
-      <!-- <button class="btn btn-warning" (click)="deleteArticle(a._id)">Delete</button> -->
-      
+      <button *ngIf="isAdminLoggedIn" class="btn btn-warning center-align" (click)="deleteArticle(a._id)">Delete</button>
     </div>
   </div>
 </div>
-
