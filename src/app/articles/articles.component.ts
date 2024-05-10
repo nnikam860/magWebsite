@@ -32,5 +32,6 @@ export class ArticlesComponent implements OnInit {
       this.ngOnInit();
       console.log(articleID);
     });
+    alert('Article deleted successfully!');
   }
 }
