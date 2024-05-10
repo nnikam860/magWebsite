@@ -46,20 +46,23 @@
   <div class="imgcontainer">
     <div class="content-and-slider">
       <div class="left-content">
-          <h1 style="text-align: center;">Latest Articles</h1>
-      <div>  
-            <p class="card-text">{{articles[0]?.content | slice:0:500}}..</p>
-      </div>      </div>
-      <div class="right-slider">
-        <div class="widget-content px-0">
-          <div class="chart d-flex justify-content-center fixed-image-size">
-            <img src="{{articles[0]?.imageArticle}}" 
-            alt="{{articles[0]?.title}}" 
-            class="large-image" alt="Image 1">
-            <!-- <a href="{{articles[0]?.imageArticle}}" target="_blank" class="btn btn-primary">Read More</a> -->
-          </div>
+        <h1 style="text-align: center;">Latest Articles</h1>
+        <div *ngIf="latestArticle">  
+            <p class="card-text">{{latestArticle?.content | slice:0:500}}..</p>
         </div>
-      </div>
+    </div>
+    
+    <div class="right-slider">
+        <div class="widget-content px-0" *ngIf="latestArticle">
+            <div class="chart d-flex justify-content-center fixed-image-size">
+                <img src="{{latestArticle?.imageArticle}}" 
+                    alt="{{latestArticle?.title}}" 
+                    class="large-image" alt="Image 1">
+                <!-- <a href="{{latestArticle?.imageArticle}}" target="_blank" class="btn btn-primary">Read More</a> -->
+            </div>
+        </div>
+    </div>
+    
       
       
         
@@ -132,7 +135,7 @@
           <div class="image-wrapper">
             <img src="{{a.imageArticle}}" alt="{{a.title}}" class="img-fluid fixed-image-size" alt="Image 1">
             <div class="read-more-wrapper">
-              <a href="{{a.imageArticle}}" target="_blank" class="btn read-more-button">Read More</a>
+              <a href="{{a.pdfArticle}}" target="_blank" class="btn read-more-button">Read More</a>
             </div>
           </div>
         </div>

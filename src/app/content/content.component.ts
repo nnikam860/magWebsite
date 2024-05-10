@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContentComponent implements OnInit {
   articles:any[]=[];
   articleID: any;
+  latestArticle: any;
 
   constructor(
     private apiServices: ApiServiceService,
@@ -19,7 +20,11 @@ export class ContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiServices.getArticles().subscribe((data: any) => {
-      this.articles = data.allArticles;    
+      this.articles = data.allArticles;
+      // Assign the latest article
+      if (this.articles.length > 0) {
+        this.latestArticle = this.articles[this.articles.length - 1];
+      }
     });
   }
 
@@ -29,5 +34,4 @@ export class ContentComponent implements OnInit {
       console.log(articleID);
     });
   }
-  
 }
