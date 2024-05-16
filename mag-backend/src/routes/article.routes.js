@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllArticles, toDeleteArticle, uploadArticle } from "../controllers/article.controller.js";
+import { getAllArticles, readMore, toDeleteArticle, uploadArticle } from "../controllers/article.controller.js";
 import { upload } from "../middleware/multer.middleware.js";
 
 const router = Router();
@@ -17,5 +17,6 @@ router.route("/upload").post(
 
 router.route("").get(getAllArticles)
 router.route("/:articleID").delete(toDeleteArticle)
+router.route("/:articleID").get(readMore)
 
 export default router;

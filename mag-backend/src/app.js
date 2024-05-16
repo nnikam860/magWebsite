@@ -29,6 +29,7 @@ import magazineRoutes from "./routes/magazine.routes.js"
 
 app.use("/api/v1/admin", adminRoutes)
 app.use("/api/v1/article", articleRoutes)
+app.use("/api/v1/article/readmore", articleRoutes)
 app.use("/api/v1/magazine", magazineRoutes)
 
 //http://localhost:8000/api/v1/admin/register

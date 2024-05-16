@@ -1,13 +1,13 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/apiError.js";
 import { Article } from "../models/article.model.js";
-import {uploadOnCloudinary} from "../utils/cloudinary.js"
+import { uploadOnCloudinary } from "../utils/cloudinary.js"
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 //post request 
 
 const uploadArticle = asyncHandler(async (req, res) => {
-  
+
   // get user details from frontend
   // validation - not empty
   // check if user already exists: username, email
@@ -34,10 +34,10 @@ const uploadArticle = asyncHandler(async (req, res) => {
   }
 
   const localFilePath = req.files?.imageArticle[0]?.path;
-  
+
 
   if (!localFilePath) {
-      throw new ApiError(400, "Avatar file is required")
+    throw new ApiError(400, "Avatar file is required")
 
   }
 
@@ -45,15 +45,15 @@ const uploadArticle = asyncHandler(async (req, res) => {
 
   if (!imageArticle) {
     throw new ApiError(400, "Avatar file is required")
-}
+  }
 
   const article = await Article.create({
     title,
     author,
     content,
     industry,
-    imageArticle:imageArticle.url,
-   
+    imageArticle: imageArticle.url,
+
   });
 
   const createdArticle = await Article.findById(article._id)
@@ -71,26 +71,36 @@ const uploadArticle = asyncHandler(async (req, res) => {
 
 //get request 
 
-const getAllArticles = asyncHandler(async (req,res)=>{
+const getAllArticles = asyncHandler(async (req, res) => {
 
   const allArticles = await Article.find({})
-   res.status(200).json({allArticles})
+  res.status(200).json({ allArticles })
 
 })
 
-const toDeleteArticle = asyncHandler(async(req, res)=>{
+const toDeleteArticle = asyncHandler(async (req, res) => {
   const id = (req.params.articleID)
-  console.log(typeof(id));
-  
-  const data = await Article.deleteOne({_id: id}).then((result)=>{
+  console.log(typeof (id));
+
+  const data = await Article.deleteOne({ _id: id }).then((result) => {
     console.log(result);
-   // res.status(204).json(204, "Article Deleted successfully")
+    // res.status(204).json(204, "Article Deleted successfully")
     res.send(result)
-    
+
   })
 
 })
 
+const readMore = asyncHandler(async (req, res) => {
+  const id = (req.params.articleID)
+  console.log(id);
+  
+
+  const readMoreArticle = await Article.findById({ _id:id })
+    res.status(200).json({readMoreArticle})
+})
+
 export { uploadArticle };
-export {getAllArticles};
-export {toDeleteArticle}
+export { getAllArticles };
+export { toDeleteArticle };
+export { readMore }
