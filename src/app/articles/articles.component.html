@@ -10,8 +10,12 @@
       <h5 class="card-title ">{{a.title }}</h5>
       <p class="card-text">{{a.content | slice:0:50}}..</p>
       <div> Posted On:{{a.createdAt | slice:0:10}} </div>
-      <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary center-align ">Read More</a>
-      <button *ngIf="isAdminLoggedIn" class="btn btn-warning center-align" (click)="deleteArticle(a._id)">Delete</button>
+      <div class="button-container">
+        <!-- <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary center-align ">Read More</a> -->
+        <!-- <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary center-align ">Read More</a> -->
+        <button class="btn btn-primary center-align" target = "_blank" (click)="readMore(a._id)">Read More</button>
+        <button *ngIf="isAdminLoggedIn" class="btn btn-warning center-align" (click)="deleteArticle(a._id)">Delete</button>
+      </div>
     </div>
   </div>
 </div>

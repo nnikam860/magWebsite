@@ -20,4 +20,10 @@ export class ApiServiceService {
     return this.http.delete(`https://api.digitalbusinessreview.com/api/v1/article/${articleID}`)
   }
 
+  getArticleById(articleID:number){
+    console.log(articleID);
+    
+    return this.http.get(`https://refactored-cod-qj7w7jg7pvx34449-3000.app.github.dev/api/v1/article/${articleID}`)
+  }
+
 }

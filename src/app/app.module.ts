@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { trigger, transition, style, animate } from '@angular/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +40,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatDividerModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

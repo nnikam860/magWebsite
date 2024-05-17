@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-magazine',
   standalone: true,
@@ -16,40 +16,42 @@ export class AddMagazineComponent {
     this.magazineForm = this.fb.group({
       title: [''],
       author: [''],
-      content: [''],
       industry: [''],
-      imageArticle: ['']
+      magazinePDF:[''],
+      coverImage: ['']
     });
   }
     onSubmit() {
+      if (this.magazineForm.valid && this.selectedFile) {
     // Handle form submission
     const formData = new FormData();
     formData.append('title', this.magazineForm.value.title);
     console.log(this.magazineForm.value.title);
     
     formData.append('author', this.magazineForm.value.author);
-    formData.append('content', this.magazineForm.value.content);    
     formData.append('industry', this.magazineForm.value.industry);    
     if (this.selectedFile) {
-      formData.append('imageArticle', this.selectedFile, this.selectedFile.name);
+      formData.append('magazinePDF', this.selectedFile, this.selectedFile.name);
+      formData.append('coverImage', this.selectedFile, this.selectedFile.name);
     }
 
     console.log(formData);
       // Send formData to your server using HttpClient
-    this.http.post('https://api.digitalbusinessreview.com/api/v1/article/upload', formData).subscribe(
+    this.http.post('http://localhost:3000/api/v1/magazine/uploadMag', formData).subscribe(
     response => {
       console.log('Server response:', response);
       // Reset the form after successful submission
-      this.magazineForm.reset();
+      
       this.selectedFile = null;
     },
     error => {
       console.error('Error:', error);
     }
   );
+      
   alert('Magazine uploaded successfully!');
   }
-
+}
   onFileSelected(event: any) {
     // Handle file selection
     this.selectedFile = event.target.files[0];

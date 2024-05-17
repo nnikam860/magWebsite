@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AddMagazineComponent } from './add-magazine/add-magazine.component';
+import { ReadMoreComponent } from './read-more/read-more.component';
 const routes: Routes = [ 
                          {path: '', component: ContentComponent},
                          {path:'articles', component: ArticlesComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
                          {path:'aboutus',component:AboutusComponent},
                          {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
                           {path:'addMagazines', component:AddMagazineComponent, canActivate:[AuthGuard]},
+                          {path:'readmore/:articleID',component:ReadMoreComponent},
                   ];
 
 @NgModule({
