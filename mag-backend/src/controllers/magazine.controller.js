@@ -105,7 +105,14 @@ const toDeleteMagazine = asyncHandler(async(req, res)=>{
   })
 
 })
-
+const readMore = asyncHandler(async (req, res) => {
+  const id = (req.params.articleID)
+  console.log(id);
+  
+  const readMoreMagazine = await Magazine.findById({ _id:id })
+    res.status(200).json({readMoreMagazine})
+})
 export { uploadMagazine };
 export {getAllMagazine};
-export {toDeleteMagazine}
+export {toDeleteMagazine};
+export {readMore};

@@ -11,6 +11,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AddMagazineComponent } from './add-magazine/add-magazine.component';
 import { ReadMoreComponent } from './read-more/read-more.component';
+import { DisplayMagazineComponent } from './display-magazine/display-magazine.component';
 const routes: Routes = [ 
                          {path: '', component: ContentComponent},
                          {path:'articles', component: ArticlesComponent},
@@ -22,6 +23,8 @@ const routes: Routes = [
                          {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
                           {path:'addMagazines', component:AddMagazineComponent, canActivate:[AuthGuard]},
                           {path:'readmore/:articleID',component:ReadMoreComponent},
+                          {path:'readmore/:magazineID',component:ReadMoreComponent},
+                          {path:'magazine',component:DisplayMagazineComponent},
                   ];
 
 @NgModule({
