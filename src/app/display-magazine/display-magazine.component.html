@@ -1,19 +1,19 @@
 <div class="container">
     <div class="card" style="width: 22rem;" *ngFor="let a of magazine">
       <div class="position-relative">
-        <img src="{{a.imageMagazine}}" style="height:15rem;" class="card-img-top" alt="{{a.title}}">
+        <img src="{{a.coverImage}}" style="height:15rem;" class="card-img-top" alt="{{a.title}}">
         <div class="card-img-overlay d-flex align-items-end justify-content-center">
           <!-- <h5 class="card-title text-white">{{a.title | slice:0:20}}</h5> -->
         </div>
       </div>
       <div class="card-body" style="height: 15rem;">
         <h5 class="card-title ">{{a.title }}</h5>
-        <p class="card-text">{{a.content }}..</p>
+        <!-- <p class="card-text">{{a.content }}..</p> -->
         <div> Posted On:{{a.createdAt }} </div>
         <div class="button-container">
           <!-- <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary center-align ">Read More</a> -->
-          <!-- <a href="{{a.imageArticle}}" target="_blank" class="btn btn-primary center-align ">Read More</a> -->
-          <button class="btn btn-primary center-align" target = "_blank" (click)="readMore(a._id)">Read More</button>
+          <a href="{{a.magazinePDF}}" target="_blank" class="btn btn-primary center-align ">Read More</a>
+          <!-- <button class="btn btn-primary center-align" target = "_blank" (click)="readMore(a._id)">Read More</button> -->
 <!-- src/app/display-magazine/display-magazine.component.html -->
           <button *ngIf="isAdminLoggedIn" class="btn btn-warning center-align" (click)="deleteMagazine(a._id)">Delete</button>
         </div>

@@ -27,7 +27,7 @@ export class DisplayMagazineComponent implements OnInit {
   
     ngOnInit(): void {
       this.magService.getMagazines().subscribe((data: any) => {
-        this.magazine = data.allArticles;
+        this.magazine = data.allMagazine;
       });
       this.authService.isUserLoggedIn.subscribe((isUserLoggedIn) => {
         this.isAdminLoggedIn = isUserLoggedIn;
