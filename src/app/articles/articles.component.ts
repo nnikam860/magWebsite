@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./articles.component.css'],
 })
 export class ArticlesComponent implements OnInit {
-  articles: any;
+  article: any;
   articleID: any;
   readArticle:any;
   isAdminLoggedIn: boolean = false;
@@ -22,7 +22,7 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiServices.getArticles().subscribe((data: any) => {
-      this.articles = data.allArticles;
+      this.article = data.allArticles;
     });
     this.authService.isUserLoggedIn.subscribe((isUserLoggedIn) => {
       this.isAdminLoggedIn = isUserLoggedIn;

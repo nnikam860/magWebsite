@@ -5,15 +5,16 @@ import { ApiServiceService } from '../services/api-service.service';
   import { AuthService } from '../services/auth.service';
   import { Router } from '@angular/router';
   import { MagServiceService } from '../services/mag-service.service';
+  import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-display-magazine',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,],
   templateUrl: './display-magazine.component.html',
   styleUrls: ['./display-magazine.component.css']
 })
 export class DisplayMagazineComponent implements OnInit {
-  magazin: any;
+  magazine: any;
   magazineId:any;
   readMagazine:any;
   isAdminLoggedIn:boolean=false;
@@ -26,7 +27,7 @@ export class DisplayMagazineComponent implements OnInit {
   
     ngOnInit(): void {
       this.magService.getMagazines().subscribe((data: any) => {
-        this.magazin = data.allArticles;
+        this.magazine = data.allArticles;
       });
       this.authService.isUserLoggedIn.subscribe((isUserLoggedIn) => {
         this.isAdminLoggedIn = isUserLoggedIn;
