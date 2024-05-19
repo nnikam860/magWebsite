@@ -37,7 +37,7 @@ export class AddMagazineComponent {
 
     console.log(formData);
       // Send formData to your server using HttpClient
-    this.http.post('http://localhost:3000/api/v1/magazine/uploadMag', formData).subscribe(
+    this.http.post('https://api.digitalbusinessreview.com/api/v1/magazine/uploadMag', formData).subscribe(
     response => {
       console.log('Server response:', response);
       // Reset the form after successful submission
