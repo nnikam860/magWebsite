@@ -40,6 +40,7 @@ const uploadMagazine = asyncHandler(async (req, res) => {
   if (!PDFlocalFilePath) {
       throw new ApiError(400, "Magazine PDF file is required")
   }
+console.log(PDFlocalFilePath);
 
   //for uploading cover image
 
@@ -48,11 +49,12 @@ const uploadMagazine = asyncHandler(async (req, res) => {
   if (!coverImagelocalFilePath) {
       throw new ApiError(400, "Cover image is required")
   }
+console.log(coverImagelocalFilePath);
 
   //uploading using cloudinary
 
   const magazinePDF = await uploadOnCloudinary(PDFlocalFilePath)
-  const coverImage = await uploadOnCloudinary(coverImagelocalFilePath)
+  //const coverImage = await uploadOnCloudinary(coverImagelocalFilePath)
 
   if (!magazinePDF) {
     throw new ApiError(400, "PDF file is required")
@@ -106,7 +108,7 @@ const toDeleteMagazine = asyncHandler(async(req, res)=>{
 
 })
 const readMore = asyncHandler(async (req, res) => {
-  const id = (req.params.articleID)
+  const id = (req.params.magazineID)
   console.log(id);
   
   const readMoreMagazine = await Magazine.findById({ _id:id })

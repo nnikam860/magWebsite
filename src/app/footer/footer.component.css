@@ -8,6 +8,7 @@
     align-items: center;
     margin-bottom: 2rem;
 }
-.justify{
-    text-align: justify;
+
+#quicklinks li:hover{
+    text-decoration: underline;
 }

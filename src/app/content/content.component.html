@@ -128,25 +128,26 @@
 
       
 <div class="container1">
-  <div class="row justify-content-between">
-    <div class="col-md-3 mt-4 mb-5" *ngFor="let a of articles; let i = index" [class.active]="i === 0">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-3 mt-4 mb-5" *ngFor="let a of articles">
       <div class="widget-content px-0">
         <div class="chart d-flex justify-content-center">
           <div class="image-wrapper">
-            <img src="{{a.imageArticle}}" alt="{{a.title}}" class="img-fluid fixed-image-size" alt="Image 1">
+            <img src="{{a.imageArticle}}" alt="{{a.title}}" class="img-fluid fixed-image-size">
             <div class="read-more-wrapper">
               <a href="{{a.pdfArticle}}" target="_blank" class="btn read-more-button">Read More</a>
             </div>
           </div>
         </div>
       </div>
-    
+    </div>
+  </div>
+</div>
 
-  
-      
+
       <!-- <div class="cont">
         <div class="left-image">
-            <!-- <img  src="assets/DBR.png" alt="Left Image">
+           <img  src="assets/DBR.png" alt="Left Image">
             <img  src="assets/sample.jpg" alt="Left Image">
         </div>
         <div class="right-images">
@@ -186,5 +187,4 @@
           </div>
         </div>
       </div> -->
-    </div>
-  </div>
+   

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ArticlesComponent implements OnInit {
   article: any;
-  articleID: any;
+  articleID: string='';
   readArticle:any;
   isAdminLoggedIn: boolean = false;
   constructor(
@@ -23,21 +23,22 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
     this.apiServices.getArticles().subscribe((data: any) => {
       this.article = data.allArticles;
+      console.log(this.article);
     });
     this.authService.isUserLoggedIn.subscribe((isUserLoggedIn) => {
       this.isAdminLoggedIn = isUserLoggedIn;
     });
   }
-  readMore(articleID: number) {
-    this.apiServices.getArticleById(articleID).subscribe((data: any) => {
+  readMore(articleID2: string) {
+    this.apiServices.getArticleById(articleID2).subscribe((data: any) => {
       
       this.readArticle = data.readMoreArticle;
     });
-console.log(articleID);
-    this.router.navigate(['/readmore', articleID])
+    console.log(articleID2);
+    this.router.navigate(['/readmore', articleID2])
   }
 
-  deleteArticle(articleID: number) {
+  deleteArticle(articleID: string) {
     return this.apiServices.destroyArticle(articleID).subscribe((data: any) => {
       this.ngOnInit();
       console.log(articleID);

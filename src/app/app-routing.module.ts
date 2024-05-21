@@ -22,7 +22,7 @@ const routes: Routes = [
                          {path:'aboutus',component:AboutusComponent},
                          {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
                           {path:'addMagazines', component:AddMagazineComponent, canActivate:[AuthGuard]},
-                          {path:'readmore/:articleID',component:ReadMoreComponent},
+                          {path:'readmore/:id',component:ReadMoreComponent},
                           {path:'readmore/:magazineID',component:ReadMoreComponent},
                           {path:'magazine',component:DisplayMagazineComponent},
                   ];

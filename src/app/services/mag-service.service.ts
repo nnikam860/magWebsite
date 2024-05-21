@@ -21,6 +21,6 @@ export class MagServiceService {
   getMagazineById(magazineID:number){
     console.log(magazineID);
     
-    return this.http.get(`https://refactored-cod-qj7w7jg7pvx34449-3000.app.github.dev/api/v1/magazine/${magazineID}`)
+    return this.http.get(`https://api.digitalbusinessreview.com/api/v1/magazine/${magazineID}`)
   }
 }

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { uploadMagazine, getAllMagazine, toDeleteMagazine } from "../controllers/magazine.controller.js";
+import { uploadMagazine, getAllMagazine, toDeleteMagazine, readMore } from "../controllers/magazine.controller.js";
 import { upload } from "../middleware/multer.middleware.js";
 
 const router = Router();
@@ -21,5 +21,6 @@ router.route("/uploadMag").post(
 
 router.route("").get(getAllMagazine)
 router.route("/:magazineID").delete(toDeleteMagazine)
+router.route("/:magazineID").get(readMore)
 
 export default router;

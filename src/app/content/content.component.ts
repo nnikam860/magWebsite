@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ApiServiceService } from '../services/api-service.service';
 import { HttpClient } from '@angular/common/http';
+import { MagServiceService } from '../services/mag-service.service';
 
 
 @Component({
@@ -12,9 +13,12 @@ export class ContentComponent implements OnInit {
   articles:any[]=[];
   articleID: any;
   latestArticle: any;
-
+  magazines:any[]=[];
+  magazineId:any;
+  latestMagazine:any;
   constructor(
     private apiServices: ApiServiceService,
+    private magservice: MagServiceService,
     private http: HttpClient
   ) {}
 
@@ -26,12 +30,13 @@ export class ContentComponent implements OnInit {
         this.latestArticle = this.articles[this.articles.length - 1];
       }
     });
-  }
-
-  deleteArticle(articleID: number) {
-    return this.apiServices.destroyArticle(articleID).subscribe((data: any) => {
-      this.ngOnInit();
-      console.log(articleID);
+    this.magservice.getMagazines().subscribe((data:any)=>{
+      this.magazines=data.allMagazine;
+      if(this.magazines.length > 0){
+        this.latestMagazine = this.magazines[this.magazines.length - 1];
+      }
     });
   }
+
+  
 }
