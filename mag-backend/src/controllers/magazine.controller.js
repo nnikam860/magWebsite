@@ -74,8 +74,8 @@ async function uploadMagazineAndCover(PDFlocalFilePath, coverImagelocalFilePath)
     const coverImage = await uploadOnCloudinary(coverImagelocalFilePath);
 
     // (Optional) Process or return the uploaded data here
-    console.log("Magazine PDF uploaded:", magazinePDF.url);
-    console.log("Cover image uploaded:", coverImage.url);
+    console.log("Magazine PDF uploaded:", magazinePDF.secure_url);
+    console.log("Cover image uploaded:", coverImage.secure_url);
 
     return { magazinePDF, coverImage }; // Or return other relevant data
   } catch (error) {
@@ -91,8 +91,8 @@ const magazineData = await uploadMagazineAndCover(PDFlocalFilePath, coverImagelo
     title,
     author,
     industry,
-    magazinePDF:magazineData.magazinePDF.url,
-    coverImage:magazineData.coverImage.url,
+    magazinePDF:magazineData.magazinePDF.secure_url,
+    coverImage:magazineData.coverImage.secure_url,
    
   });
 
