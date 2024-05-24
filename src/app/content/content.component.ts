@@ -30,8 +30,9 @@ export class ContentComponent implements OnInit {
         this.latestArticle = this.articles[this.articles.length - 1];
       }
     });
-    this.magservice.getMagazines().subscribe((data:any)=>{
-      this.magazines=data.allMagazine;
+    this.magservice.getMagazines().subscribe((data: any) => {
+      this.magazines = data.allMagazine;
+  console.log(this.magazines)
       if(this.magazines.length > 0){
         this.latestMagazine = this.magazines[this.magazines.length - 1];
       }
