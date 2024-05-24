@@ -53,23 +53,46 @@ console.log(coverImagelocalFilePath);
 
   //uploading using cloudinary
 
-  const magazinePDF = await uploadOnCloudinary(PDFlocalFilePath)
-  //const coverImage = await uploadOnCloudinary(coverImagelocalFilePath)
+//   const magazinePDF = await uploadOnCloudinary(PDFlocalFilePath)
+  
+//   const coverImage = await uploadOnCloudinary(coverImagelocalFilePath)
 
-  if (!magazinePDF) {
-    throw new ApiError(400, "PDF file is required")
+//   if (!magazinePDF) {
+//     throw new ApiError(400, "PDF file is required")
+// }
+
+// if (!coverImage) {
+//     throw new ApiError(400, "Cover Image is required")
+// }
+
+async function uploadMagazineAndCover(PDFlocalFilePath, coverImagelocalFilePath) {
+  try {
+    // Upload the PDF first
+    const magazinePDF = await uploadOnCloudinary(PDFlocalFilePath);
+
+    // Upload the cover image only after the PDF upload is complete
+    const coverImage = await uploadOnCloudinary(coverImagelocalFilePath);
+
+    // (Optional) Process or return the uploaded data here
+    console.log("Magazine PDF uploaded:", magazinePDF.url);
+    console.log("Cover image uploaded:", coverImage.url);
+
+    return { magazinePDF, coverImage }; // Or return other relevant data
+  } catch (error) {
+    console.error("Error uploading files:", error);
+    // Handle upload errors appropriately
+  }
 }
 
-if (!coverImage) {
-    throw new ApiError(400, "Cover Image is required")
-}
+const magazineData = await uploadMagazineAndCover(PDFlocalFilePath, coverImagelocalFilePath);
+
 
   const magazine = await Magazine.create({
     title,
     author,
     industry,
-    magazinePDF:magazinePDF.url,
-    coverImage:coverImage.url,
+    magazinePDF:magazineData.magazinePDF.url,
+    coverImage:magazineData.coverImage.url,
    
   });
 

@@ -33,6 +33,7 @@ export class DisplayMagazineComponent implements OnInit {
   pdfUrl = '';
   isAdminLoggedIn: boolean = false;
   page: number = 1;
+  title:any
 
   constructor(
     private magService: MagServiceService,
@@ -57,6 +58,7 @@ export class DisplayMagazineComponent implements OnInit {
   readMore(magazineID: number) {
     this.magService.getMagazineById(magazineID).subscribe((data: any) => {
       this.readMagazine = data.readMoreMagazine
+      this.title = this.readMagazine.title
       this.magazineID = magazineID
       let url = this.readMagazine.magazinePDF
       this.pdfUrl = url
