@@ -66,5 +66,7 @@
 .smedia{
     text-size-adjust: 0.5rem;
 }
-
+.nav-link {
+  font-size: 1.2rem; /* Adjust the font size as needed */
+}
   

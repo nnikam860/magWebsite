@@ -11,7 +11,8 @@ import { ReactiveFormsModule, NgForm } from '@angular/forms';
 })
 export class AddMagazineComponent {
   magazineForm: FormGroup;
-  selectedFile: File | null = null;
+  PDF: File | null = null;
+  Image: File | null = null;
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.magazineForm = this.fb.group({
       title: [''],
@@ -22,7 +23,7 @@ export class AddMagazineComponent {
     });
   }
     onSubmit() {
-      if (this.magazineForm.valid && this.selectedFile) {
+      if (this.magazineForm.valid && this.PDF) {
     // Handle form submission
     const formData = new FormData();
     formData.append('title', this.magazineForm.value.title);
@@ -30,11 +31,17 @@ export class AddMagazineComponent {
     
     formData.append('author', this.magazineForm.value.author);
     formData.append('industry', this.magazineForm.value.industry);    
-    if (this.selectedFile) {
-      formData.append('magazinePDF', this.selectedFile, this.selectedFile.name);
-      formData.append('coverImage', this.selectedFile, this.selectedFile.name);
+    if (this.PDF) {
+      console.log(this.magazineForm.value.magazinePDF);
+      formData.append('magazinePDF', this.PDF, this.PDF.name);
     }
-
+   
+    
+    if(this.Image){
+      console.log(this.magazineForm.value.coverImage)
+      formData.append('coverImage', this.Image, this.Image.name )
+    }
+    
     console.log(formData);
       // Send formData to your server using HttpClient
     this.http.post('https://api.digitalbusinessreview.com/api/v1/magazine/uploadMag', formData).subscribe(
@@ -42,7 +49,8 @@ export class AddMagazineComponent {
       console.log('Server response:', response);
       // Reset the form after successful submission
       
-      this.selectedFile = null;
+      this.PDF = null;
+      this.Image = null;
     },
     error => {
       console.error('Error:', error);
@@ -52,9 +60,14 @@ export class AddMagazineComponent {
   alert('Magazine uploaded successfully!');
   }
 }
-  onFileSelected(event: any) {
-    // Handle file selection
-    this.selectedFile = event.target.files[0];
+onFileSelected(event: any) {
+  const selectedFile = event.target.files[0];
+  if (event.target.id === 'inputGroupFile01') {
+    this.PDF = selectedFile;
+  } else if (event.target.id === 'inputGroupFile02') {
+    this.Image = selectedFile;
   }
+}
+
 
 }

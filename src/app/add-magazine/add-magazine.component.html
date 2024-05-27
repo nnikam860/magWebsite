@@ -30,13 +30,13 @@
                   <span>Magazine:</span><input type="file" class="form-control" id="inputGroupFile01" name="magazinePDF" (change)="onFileSelected($event)">
               </div>
               <div class="input-group mb-3">
-               <span>Cover Image:</span> <input type="file" class="form-control" id="inputGroupFile01" name="coverImage" (change)="onFileSelected($event)">
+               <span>Cover Image:</span> <input type="file" class="form-control" id="inputGroupFile02" name="coverImage" (change)="onFileSelected($event)">
             </div>
               <div class="d-grid gap-2 col-3" >
                 <button class="btn btn-primary"  type="submit">Submit</button>
               </div>
-        </form>
-      <form [formGroup]="magazineForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data"> 
+        
+      
                  
       </form> 
     </div>
